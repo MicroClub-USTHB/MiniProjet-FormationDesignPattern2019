@@ -38,7 +38,6 @@ public class MessageBox {
         conteneur.getStylesheets().add("Presentation/CSS/Style.css");
         p1.setStyle("-fx-background-color:  #b0bbbf");
         p1.setPrefHeight(40);
-
         ImageView img1=new ImageView(new Image("Presentation/Assets/close'.png"));
         img1.setFitHeight(22);
         img1.setFitWidth(25);

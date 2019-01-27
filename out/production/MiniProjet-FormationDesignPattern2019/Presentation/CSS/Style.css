@@ -1,0 +1,102 @@
+
+.closeButtons:hover{
+    -fx-background-color: #635e5e;
+    -fx-border-color: #b7c1c4;
+    -fx-border-width: 4px 0px 4px 0px;
+}
+
+.jfx-text-field{
+    -fx-border-width: 3px 3px 3px 3px;
+}
+
+.vbox{
+    -fx-background-color: white;
+}
+
+.buttons{
+    -fx-focus-traversable: false;
+    -fx-cursor: Hand;
+    -fx-text-fill: #ffff;
+    -fx-font-family: Impact;
+    -fx-font-size: 20;
+    -fx-background-color: #b0bbbf;
+}
+
+.buttons1{
+    -fx-focus-traversable: false;
+    -fx-cursor: Hand;
+    -fx-text-fill: #ffff;
+    -fx-font-family: Impact;
+    -fx-font-size: 20;
+    -fx-background-color: #b7c1c4;
+}
+
+
+.buttons:hover {
+    -fx-border-color: #71777a;
+    -fx-border-width: 0px 0px 4px 0px;
+}
+
+.table-view {
+    -fx-background-color: #FAFAFA;
+}
+
+.table-view:focused {
+    -fx-background-color: #FFFDE7;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-border-width: 0px 0px 1.3px 0px;
+    -fx-border-color: #b0bbbf;
+}
+
+.table-row-cell:selected { -fx-background-color:  #a0aaae; }
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:vertical *.increment-button,
+.table-view *.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.thumb,
+.table-view *.scroll-bar:vertical *.thumb{
+    -fx-background-color:  #a9e5bb;
+}
+
+.table-view *.scroll-bar:horizontal *.track,
+.table-view *.scroll-bar:vertical *.track,
+.table-view *.column-header,
+.table-view *.filler{
+    -fx-background-color: #b7c1c4;
+}
+
+.table-view .column-header.label{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: Impact;
+    -fx-font-size: 20;
+}
+
+.table-row-cell .text{
+    -fx-font-family: Impact;
+    -fx-font-size: 19;
+    -fx-fill:#81898b ;
+}
+
+.table-view *.scroll-bar:horizontal *.thumb:focused,
+.table-view *.scroll-bar:vertical *.thumb:focused{
+    -fx-background-color: #FAFAFA;
+}
+
+

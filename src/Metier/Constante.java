@@ -16,11 +16,21 @@ public class Constante extends Formule_Atomique {
     }
 
     @Override
+    public void setValeur(boolean b) {
+
+    }
+
+    @Override
+    public boolean isVariable() {
+        return false;
+    }
+
+    @Override
     public Function<Boolean[], Boolean> getCalculator() {
         return new Function<Boolean[], Boolean>() {
             @Override
             public Boolean apply(Boolean[] booleans) {
-                return valeur;
+                return false;
             }
         };
     }

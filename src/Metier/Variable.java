@@ -21,4 +21,17 @@ public class Variable extends Formule_Atomique{
             }
         };
     }
+
+    @Override
+    public boolean isVariable() {
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        if(!isNegation())
+            return getIdentifiant();
+        else
+            return "NOT("+getIdentifiant()+")";
+    }
 }

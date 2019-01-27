@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1112.0" style="-fx-border-color: #919a9d; -fx-border-width: 5px 5px 5px 5px; -fx-background-color: white;" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.Controlleur.Controller">
+   <children>
+      <Pane prefHeight="52.0" prefWidth="1112.0" style="-fx-background-color: b0bbbf;" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="titre" layoutX="25.0" layoutY="9.0" prefHeight="39.0" prefWidth="288.0" text="Mini-Compilateur" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="31.0" />
+               </font>
+            </Label>
+            <HBox layoutX="985.0" prefHeight="52.0" prefWidth="117.0">
+               <children>
+                  <JFXButton contentDisplay="CENTER" focusTraversable="false" onAction="#Iconify" prefHeight="57.0" prefWidth="57.0" ripplerFill="WHITE" styleClass="closeButtons" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../Assets/Line'.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" focusTraversable="false" onAction="#fermerFenetre" prefHeight="59.0" prefWidth="62.0" ripplerFill="WHITE" styleClass="closeButtons" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../Assets/close'.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <HBox prefHeight="545.0" prefWidth="1102.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="545.0" prefWidth="543.0" spacing="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="82.0" prefWidth="224.0" text="Veuillez Introduire Une Expression Logique :" textFill="#81898b" wrapText="true" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="expr" focusColor="#a0a9ad00" focusTraversable="false" prefHeight="71.0" prefWidth="503.0" style="-fx-border-color: #c5cdd0; -fx-border-width: 3px 3px 3px 3px;" unFocusColor="#c4cccf00" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </JFXTextField>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <JFXButton fx:id="compiler" disable="true" focusTraversable="false" onAction="#compilation" ripplerFill="WHITE" styleClass="buttons" text="Compiler" HBox.hgrow="ALWAYS" />
+                        <JFXButton fx:id="executer" disable="true" focusTraversable="false" onAction="#execution" ripplerFill="WHITE" styleClass="buttons" text="Exécuter" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <Line endX="-100.41421508789062" endY="523.2929077148438" startX="-100.0" stroke="#b7c1c4" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Line>
+            <TableView fx:id="table" focusTraversable="false" prefHeight="545.0" prefWidth="532.0" styleClass="table-row-cell" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+</VBox>
