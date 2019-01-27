@@ -29,6 +29,9 @@ public class Variable extends Formule_Atomique{
 
     @Override
     public String toString() {
-        return getIdentifiant();
+        if(!isNegation())
+            return getIdentifiant();
+        else
+            return "NOT("+getIdentifiant()+")";
     }
 }

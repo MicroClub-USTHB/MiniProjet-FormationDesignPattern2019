@@ -26,11 +26,6 @@ public class Constante extends Formule_Atomique {
     }
 
     @Override
-    public String toString() {
-        return getIdentifiant();
-    }
-
-    @Override
     public Function<Boolean[], Boolean> getCalculator() {
         return new Function<Boolean[], Boolean>() {
             @Override

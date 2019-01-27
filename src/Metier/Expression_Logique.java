@@ -9,6 +9,8 @@ public abstract class Expression_Logique implements Refutable {
 
     Function<Stack<Boolean>,Stack<Boolean>> stackHandler ;
 
+    protected boolean negation = false;
+
     public Function<Stack<Boolean>, Stack<Boolean>> getStackHandler() {
         return stackHandler;
     }
@@ -17,6 +19,13 @@ public abstract class Expression_Logique implements Refutable {
 
     @Override
     public abstract boolean evaluer();
+
+    public final boolean negationner(){
+        negation = !negation;
+        return negation;
+    }
+
+
 
     public  LinkedList<Boolean> getValeursVerite(){
         HashSet<Formule_Atomique> HF = new HashSet<>();
@@ -27,7 +36,6 @@ public abstract class Expression_Logique implements Refutable {
         }
         return LB;
     }
-
 
     @Override
     public Expression_Logique getExpression() {
