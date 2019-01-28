@@ -6,10 +6,12 @@ import Metier.Formule_Atomique;
 import Metier.Terme_NE;
 import Metier.Variable;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -19,6 +21,7 @@ import javafx.util.Callback;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.UnaryOperator;
 
 public abstract class Call {
 
@@ -60,17 +63,17 @@ public abstract class Call {
         Table.setItems(o);
         for (int i = 0; i <listNomColonnes.size(); i++) {
             String str = listNomColonnes.get(i);
-            TableColumn<LinkedList<Boolean>,String> T = new TableColumn<>(str);
+            TableColumn<LinkedList<Boolean>,Boolean> T = new TableColumn<>(str);
             int finalI = i;
-            T.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().get(finalI)+""));
-            T.setCellFactory(new Callback<TableColumn<LinkedList<Boolean>, String>, TableCell<LinkedList<Boolean>, String>>() {
+            T.setCellValueFactory(cell -> new SimpleBooleanProperty(cell.getValue().get(finalI)));
+            T.setCellFactory(new Callback<TableColumn<LinkedList<Boolean>, Boolean>, TableCell<LinkedList<Boolean>, Boolean>>() {
                 @Override
-                public TableCell<LinkedList<Boolean>, String> call(TableColumn<LinkedList<Boolean>, String> param) {
+                public TableCell<LinkedList<Boolean>, Boolean> call(TableColumn<LinkedList<Boolean>, Boolean> param) {
                     return new TableCell<>() {
                         @Override
-                        protected void updateItem(String item, boolean empty) {
+                        protected void updateItem(Boolean item, boolean empty) {
                             if(item!=null && !empty){
-                                setText(item);
+                                setText(String.valueOf(item));
                                 if(dictionnaire.get(param.getTableView().getItems().get(getIndex())))
                                     setStyle("-fx-background-color: #73dbc9");
                             }
@@ -79,6 +82,8 @@ public abstract class Call {
                 }
             });
             Table.getColumns().add(T);
+            T.setSortType(TableColumn.SortType.DESCENDING);
+            Table.getSortOrder().add(T);
         }
     }
 
